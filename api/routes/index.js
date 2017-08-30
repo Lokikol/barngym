@@ -1,8 +1,8 @@
 //Get Router Module from express
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-//var ctrlHotels = require('../controllers/hotels.controllers.js');
+const ctrlAuth = require('../controller/authenticationController');
 
 
 // Hotel routes
@@ -16,15 +16,24 @@ router
   .get(ctrlHotels.hotelsGetOne)
   .put(ctrlHotels.hotelsUpdateOne);*/
 
-
+//Test route for authentication
+router
+  .route('/test')
+  .get(ctrlAuth.authenticate,(req,res)=>{
+    res.status(200).json({
+      success: true,
+      message: 'Hat geklappt',
+      username: req.username
+    });
+  });
 
 // Authentication
-/*router
-  .route('/users/register')
-  .post(ctrlUsers.register);
+router
+  .route('/register')
+  .post(ctrlAuth.register);
 
   router
-    .route('/users/login')
-    .post(ctrlUsers.login);*/
+    .route('/token')
+    .post(ctrlAuth.token);
 
 module.exports = router;

@@ -1,2 +1,1 @@
-//require('./hotels.model');
-//require('./users.model');
+require('./users.model');

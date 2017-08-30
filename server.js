@@ -17,13 +17,19 @@ app.set('port',port);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-//serve static files - prüfen ob path stimmt
+//serve static files - prï¿½fen ob path stimmt
 app.use(express.static(path.join(__dirname,'public/dist/index.html')));
+
+app.use((req,res,next)=>{
+	console.log(req.method, req.url);
+	next();
+	
+});
 
 //set api routes
 app.use('/api',routes);
 
-//Return other routes to angular index file
+//Return other routes to angular index files
 app.get('*',(req,res)=>{
 	res.sendFile(path.join(__dirname,'public/dist/index.html'));
 });
