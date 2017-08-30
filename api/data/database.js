@@ -8,6 +8,9 @@ mongoose.connect(dbUrl, function(err) {
     if(err) {
         console.log('Connection error');
     }
+	else{
+		console.log('Connection to Database established');
+	}
 });
 
 //bring in models & schemas
