@@ -6,9 +6,8 @@ const http = require('http');
 const app = express();
 
 //eigene requires
-//config usw
 const db = require('./api/data/database');
-//const routes = require('./api/routes');
+const routes = require('./api/routes');
 
 //variablen
 const port = process.env.PORT || '3000';
@@ -22,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public/dist/index.html')));
 
 //set api routes
-//app.use('/api',routes);
+app.use('/api',routes);
 
 //Return other routes to angular index file
 app.get('*',(req,res)=>{
@@ -30,7 +29,7 @@ app.get('*',(req,res)=>{
 });
 
 //create htp server - later https
-cnst server = http.createServer(app);
+const server = http.createServer(app);
 server.listen(port,()=>{
 	console.log(`Running on localhost:${port}`);
 });
