@@ -1,0 +1,6 @@
+<p>
+  home works! {{authService.currentUser.username}}
+</p>
+
+
+<button *ngIf="authService.isLoggedIn()" class="btn btn-warn" (click)="logout()">Logout</button>

@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import 'variables';
+
+body{
+    background-color: $bg;
+}
+
+.logo-container{
+    text-align: center;
+}
+
+.logo-big{
+    width: 384px;
+    height: 200px;
+}

@@ -1,0 +1,20 @@
+@import '../../variables';
+
+.login-container{
+    padding-top: 80px;
+}
+
+label{
+    font-size: 1.6em;
+    color: $accent;
+    margin-bottom:21px;
+}
+
+form{
+    padding-top: 65px;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 21px;
+}

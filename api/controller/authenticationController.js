@@ -57,7 +57,7 @@ module.exports.token = (req,res)=>{
 	User.findOne({
 		username: username //find the user with the unique username
 	}).exec((err,foundUser)=>{
-		if(err){
+		if(err || !foundUser){
 			res.status(400).json({
 				success: false,
 				message: 'Please provide valid username and password data'
