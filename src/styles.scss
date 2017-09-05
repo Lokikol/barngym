@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation-flex.min.css');
 @import 'variables';
 
 body{
@@ -14,4 +14,22 @@ body{
 .logo-big{
     width: 384px;
     height: 200px;
+}
+
+.btn{
+    border: 2px solid $accent;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: $accent;
+    font-size: 1.2em;
+    outline: none;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
 }

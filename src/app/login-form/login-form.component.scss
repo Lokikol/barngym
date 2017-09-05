@@ -15,6 +15,11 @@ form{
     text-align: center;
 }
 
-input {
+input, input:focus, input:active, input:hover, input:visited {
     margin-bottom: 21px;
+    background-color: transparent;
+    border: 1px solid $accent;
+    color: $accent;
+    outline: none;
+    text-align: center;
 }

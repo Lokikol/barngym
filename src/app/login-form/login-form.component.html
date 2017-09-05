@@ -4,42 +4,43 @@
     <img class="logo-big" src="../assets/logo_accent.png" alt="">
   </div>
 
-  <form #f="ngForm" (ngSubmit)="login(f)">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input 
-        ngModel
-        #username="ngModel"
-        required
-        type="text" name="username" class="form-control">
+  <form #f="ngForm" (ngSubmit)="login(f)">  
+    <div class="row">
+      <div class="medium-12 columns">
+        <label for="username">Username</label>
+        <input 
+          ngModel
+          #username="ngModel"
+          required
+          type="text" name="username" class="form-control">
 
-      <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
-        <div *ngIf="username.errors.required">Username is required.</div>
-      </div>
-
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        ngModel
-        #password="ngModel"
-        required
-        type="password" name="password" class="form-control">
-
-      <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
-          <div *ngIf="password.errors.required">Password is required.</div>
+        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+          <div *ngIf="username.errors.required">Username is required.</div>
         </div>
 
-    </div>
+      </div>
+      <div class="medium-12 columns">
+        <label for="password">Password</label>
+        <input
+          ngModel
+          #password="ngModel"
+          required
+          type="password" name="password" class="form-control">
 
-    <div *ngIf="invalidLogin" class="alert alert-danger">
-      Invalid Login
-    </div>
+        <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+            <div *ngIf="password.errors.required">Password is required.</div>
+          </div>
 
-    <div>
-        <button type="button" class="btn btn-primary btn-lg pull-left" (click)="register($event)">Register</button>
-        <button class="btn btn-primary btn-lg pull-right" [disabled]="f.invalid">Login</button>
+      </div>
+
+      <div *ngIf="invalidLogin" class="alert alert-danger">
+        Invalid Login
+      </div>
+
+      <div class="medium-12 columns">
+          <button type="button" class="btn pull-left" (click)="register($event)">Register</button>
+          <button class="btn pull-right" [disabled]="f.invalid">Login</button>
+      </div>
     </div>
-    
   </form>
 </div>
